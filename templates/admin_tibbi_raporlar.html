@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tıbbi Raporlar</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Tıbbi Raporlar</h1>
+        <ul class="list-group mb-4">
+            {% for rapor in tibbi_raporlar %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Hasta ID: {{ rapor.hasta_id }}, Doktor ID: {{ rapor.doktor_id }}, Tarih: {{ rapor.rapor_tarihi }}
+                    <div>
+                        <a href="{{ url_for('admin_tibbi_rapor_guncelle', id=rapor.id) }}" class="btn btn-warning btn-sm">Güncelle</a>
+                        <a href="{{ url_for('admin_tibbi_rapor_sil', id=rapor.id) }}" class="btn btn-danger btn-sm">Sil</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('admin_tibbi_rapor_ekle') }}" class="btn btn-primary">Yeni Tıbbi Rapor Ekle</a>
+    </div>
+</body>
+</html>

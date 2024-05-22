@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doktor Anasayfası</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Hoşgeldiniz, Doktor!</h1>
+
+        <h2>Randevularım</h2>
+        <ul class="list-group mb-4">
+            {% for randevu in randevular %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Hasta: {{ randevu.hasta.ad }} {{ randevu.hasta.soyad }} - Tarih: {{ randevu.randevu_tarihi }} - Saat: {{ randevu.randevu_saati }}
+                    <a href="{{ url_for('tibbi_rapor_ekle', randevu_id=randevu.id) }}" class="btn btn-primary btn-sm">Tıbbi Rapor Ekle</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('logout') }}" class="btn btn-secondary">Çıkış Yap</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

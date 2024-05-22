@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hastalar</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Hastalar</h1>
+        <ul class="list-group mb-4">
+            {% for hasta in hastalar %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ hasta.ad }} {{ hasta.soyad }}
+                    <div>
+                        <a href="{{ url_for('admin_hasta_guncelle', id=hasta.id) }}" class="btn btn-warning btn-sm">Güncelle</a>
+                        <a href="{{ url_for('admin_hasta_sil', id=hasta.id) }}" class="btn btn-danger btn-sm">Sil</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('admin_hasta_ekle') }}" class="btn btn-primary">Yeni Hasta Ekle</a>
+    </div>
+</body>
+</html>

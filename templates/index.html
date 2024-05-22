@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sağlık Projesi</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Giriş Yap</h1>
+        <div class="list-group">
+            <a href="{{ url_for('login', role='hasta') }}" class="list-group-item list-group-item-action">Hasta Girişi</a>
+            <a href="{{ url_for('login', role='doktor') }}" class="list-group-item list-group-item-action">Doktor Girişi</a>
+            <a href="{{ url_for('login', role='yonetici') }}" class="list-group-item list-group-item-action">Yönetici Girişi</a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

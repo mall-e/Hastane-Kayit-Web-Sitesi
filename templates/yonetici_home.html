@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Yönetici Anasayfası</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Hoşgeldiniz, Yönetici!</h1>
+
+        <h2>Hastalar</h2>
+        <a href="{{ url_for('admin_hastalar') }}" class="btn btn-primary">Hastaları Görüntüle</a>
+
+        <h2>Doktorlar</h2>
+        <a href="{{ url_for('admin_doktorlar') }}" class="btn btn-primary">Doktorları Görüntüle</a>
+
+        <h2>Randevular</h2>
+        <a href="{{ url_for('admin_randevular') }}" class="btn btn-primary">Randevuları Görüntüle</a>
+
+        <h2>Tıbbi Raporlar</h2>
+        <a href="{{ url_for('admin_tibbi_raporlar') }}" class="btn btn-primary">Tıbbi Raporları Görüntüle</a>
+
+        <a href="{{ url_for('logout') }}" class="btn btn-secondary">Çıkış Yap</a>
+    </div>
+</body>
+</html>

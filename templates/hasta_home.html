@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasta Anasayfası</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Hoşgeldiniz, Hasta!</h1>
+
+        <h2>Randevularım</h2>
+        <ul class="list-group mb-4">
+            {% for randevu in randevular %}
+                <li class="list-group-item">
+                    Doktor: {{ randevu.doktor.ad }} {{ randevu.doktor.soyad }} - Tarih: {{ randevu.randevu_tarihi }} - Saat: {{ randevu.randevu_saati }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <h2>Tıbbi Raporlarım</h2>
+        <ul class="list-group mb-4">
+            {% for rapor in tibbi_raporlar %}
+                <li class="list-group-item">
+                    Doktor: {{ rapor.doktor.ad }} {{ rapor.doktor.soyad }} - Tarih: {{ rapor.rapor_tarihi }} - İçerik: {{ rapor.rapor_icerigi }}
+                </li>
+            {% endfor %}
+        </ul>
+
+        <a href="{{ url_for('randevu_olustur') }}" class="btn btn-primary mb-3">Randevu Oluştur</a><br>
+        <a href="{{ url_for('logout') }}" class="btn btn-secondary">Çıkış Yap</a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
